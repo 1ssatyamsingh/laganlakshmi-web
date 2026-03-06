@@ -1,0 +1,250 @@
+/* ===============================
+   HERO.CSS
+   All styles scoped to Hero.jsx
+   classes only — extracted from
+   global style.css
+   =============================== */
+
+:root {
+  --primary-green: #00c89e;
+}
+
+/* ===========================
+   HERO SECTION WRAPPER
+=========================== */
+
+.hero-section {
+  background: #ffffff;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ===========================
+   SWIPER SLIDER
+=========================== */
+
+.hs-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Dim non-active slides */
+.hs-slider .swiper-slide {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hs-slider .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.5;
+  transform: scale(0.97);
+}
+
+/* ===========================
+   EACH SLIDE ITEM
+=========================== */
+
+.hs-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 780px;
+
+  /* background image via set-bg + inline style */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+
+/* ===========================
+   WHITE CARD OVERLAY
+=========================== */
+
+.hc-inner-text {
+  background: #ffffff;
+  padding: 40px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+
+  /* Reset animation values from global (opacity:0 top:100px) */
+  opacity: 1;
+  top: 0;
+  transition: all 0.3s ease-out;
+}
+
+/* ===========================
+   LEFT TEXT BLOCK
+=========================== */
+
+.hc-text {
+  float: left;
+  margin-right: 18px;
+}
+
+.hc-text h4 {
+  color: #111111;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hc-text p {
+  color: #666666;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 0 8px;
+  line-height: 24px;
+}
+
+.hc-text p span {
+  color: var(--primary-green);
+}
+
+/* FOR RENT / FOR SALE badge */
+.hc-text .label {
+  font-size: 12px;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 2px 10px;
+  background: #3068b2;
+  font-weight: 600;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Price heading */
+.hc-text h5 {
+  color: var(--primary-green);
+  font-weight: 700;
+  display: inline-block;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+.hc-text h5 span {
+  color: #666666;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* ===========================
+   WIDGET (icons list)
+=========================== */
+
+.hc-widget {
+  overflow: hidden;
+  width: 185px;
+  position: relative;
+  right: -52px;
+  top: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.hc-widget li {
+  font-size: 15px;
+  color: #111111;
+  font-weight: 500;
+  list-style: none;
+  width: 50%;
+  float: left;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hc-widget li i {
+  font-size: 14px;
+  color: #666666;
+  margin-right: 4px;
+}
+
+/* ===========================
+   SWIPER NAVIGATION BUTTONS
+=========================== */
+
+.hs-slider .swiper-button-next,
+.hs-slider .swiper-button-prev {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.hs-slider .swiper-button-next:hover,
+.hs-slider .swiper-button-prev:hover {
+  background: var(--primary-green);
+}
+
+.hs-slider .swiper-button-next::after,
+.hs-slider .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hs-item {
+    height: 560px;
+  }
+
+  .hc-widget {
+    right: 0;
+    width: 160px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hs-item {
+    height: auto;
+    padding: 80px 15px;
+    align-items: flex-start;
+  }
+
+  .hc-inner-text {
+    padding: 25px 20px;
+    width: 100%;
+  }
+
+  .hc-text {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .hc-widget {
+    overflow: hidden;
+    width: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 479px) {
+  .hc-inner-text {
+    padding: 25px 14px;
+  }
+
+  .hs-slider .swiper-button-next,
+  .hs-slider .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hs-slider .swiper-button-next::after,
+  .hs-slider .swiper-button-prev::after {
+    font-size: 14px;
+  }
+}
